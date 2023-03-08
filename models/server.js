@@ -7,6 +7,8 @@ class Server {
     constructor() {
         this.app = express();
         this.pacientesPath = '/api/pacientes';
+        this.cuadrantePath = '/api/cuadrante';
+        this.medicosPath = '/api/medicos';
 
         // Conectar a base de datos
         this.conectarDB();
@@ -30,6 +32,8 @@ class Server {
 
     routes(){
         this.app.use(this.pacientesPath , require('../routes/pacientesRoutes'));
+        this.app.use(this.cuadrantePath , require('../routes/cuadranteRoutes'));
+        this.app.use(this.medicosPath , require('../routes/medicosRoutes'));
     }
 
     listen() {

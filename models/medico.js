@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const pacienteSchema = new mongoose.Schema({
+const medicoSchema = new mongoose.Schema({
   id: {
     type: String,
     unique: true,
@@ -27,14 +27,13 @@ const pacienteSchema = new mongoose.Schema({
     type: Number,
     required: [false, 'Edad no obligatoria']
   },
-  nSeguro: {
-    type: Number,
-    unique: true,
-    required: [true, 'Número de seguro obligatorio']
+  especialidad: {
+    type: String,
+    required: [true, 'Especialidad obligatoria']
   }
-}, { collection: 'pacientes' });
+}, { collection: 'medicos' });
 
 
-const Paciente = mongoose.model('paciente', pacienteSchema);
+const Medico = mongoose.model('medico', medicoSchema);
 
-module.exports = Paciente;
+module.exports = Medico;

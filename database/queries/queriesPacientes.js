@@ -1,14 +1,14 @@
-const mPaciente = require('../../models/paciente')
+const mPaciente = require('../../models/paciente');
 const crypto = require('crypto');
 
 
 const getPaciente = async (idPaciente) => {
-    return mPaciente.findOne({ id: idPaciente });
+    return await mPaciente.findOne({ id: idPaciente });
 }
 
 
 const getListaPacientes = async () => {
-    return mPaciente.find();
+    return await mPaciente.find();
 }
 
 
@@ -33,7 +33,6 @@ const updatePaciente = async (idPaciente, paciente) => {
 
 
 const deletePaciente = async (idPaciente) => {
-    console.log(idPaciente)
     return await mPaciente.deleteOne({ id: idPaciente });
 }
 

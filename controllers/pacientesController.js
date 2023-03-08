@@ -26,6 +26,18 @@ const getListaPacientes = async(req = request, res = response) => {
 }
 
 
+const getPacientesMedico = async(req = request, res = response) => {
+    try {
+        /* const resp = await queriesPacientes.getPaciente(req.params.id);
+
+        res.status(200).json({ 'paciente': resp }); */
+    
+    } catch (err) {
+       /*  res.status(200).json({ 'msg': 'Registro no encontrado' }); */
+    }
+}
+
+
 const insertPacientes = async (req = request, res = response) => {
     try {
         const resp = await queriesPacientes.insertPacientes(req.body);
@@ -72,6 +84,7 @@ const deletePaciente = async(req = request, res = response) => {
 module.exports = {
     getPaciente,
     getListaPacientes,
+    getPacientesMedico,
     insertPacientes,
     updatePaciente,
     deletePaciente,
