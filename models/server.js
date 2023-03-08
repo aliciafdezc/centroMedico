@@ -1,12 +1,12 @@
 const cors = require('cors');
 const express = require('express');
-const { dbConnection } = require('../database/config');
+const { conexionDB } = require('../database/Conexion');
 
 class Server {
 
     constructor() {
         this.app = express();
-        this.path = '/api';
+        this.pacientesPath = '/api/pacientes';
 
         // Conectar a base de datos
         this.conectarDB();
@@ -14,22 +14,22 @@ class Server {
         //Middlewares
         this.middlewares();
 
-        // Rutas
+        //Rutas
         this.routes();
         
     }
     async conectarDB() {
-        await dbConnection();
+        await conexionDB();
     }
 
     middlewares() {
         this.app.use(cors());
-
+        
         this.app.use(express.json());
     }
 
     routes(){
-        this.app.use(this.path , require('../routes'));
+        this.app.use(this.pacientesPath , require('../routes/pacientesRoutes'));
     }
 
     listen() {
