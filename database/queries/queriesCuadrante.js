@@ -8,7 +8,12 @@ const insertarCuadrante = async (cuadrantes) => {
 }
 
 
+const getCuadranteSemanal = async () => {
+    return await mCuadrante.find();
+}
+
 
 module.exports = {
     insertarCuadrante,
+    getCuadranteSemanal
 };

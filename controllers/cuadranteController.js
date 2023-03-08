@@ -8,7 +8,19 @@ const listTurnos = ['Mañana', 'Tarde'];
 const especialidades = ['medicina general', 'rodillología', 'ojología', 'golpenloslomoslogía', 'tontología', 'gargantología'];
     
 
-const generarCuadrante = async (req = request, res = response) => {
+const getCuadranteSemanal = async (req = request, res = response) => {
+    try {
+        const resp = await queriesCuadrante.getCuadranteSemanal();
+
+        res.status(200).json({ 'cuadrante': resp });
+    
+    } catch (err) {
+        res.status(200).json({ 'msg': 'Registro no encontrado' });
+    }
+}
+
+
+const generarCuadranteSemanal = async (req = request, res = response) => {
     const cuadrante = [];
     let citas = [];
     let medicos = await queriesMedicos.getListaMedicos();
@@ -42,6 +54,7 @@ const generarCuadrante = async (req = request, res = response) => {
 
 
 module.exports = {
-    generarCuadrante,
+    getCuadranteSemanal,
+    generarCuadranteSemanal,
 }
 
