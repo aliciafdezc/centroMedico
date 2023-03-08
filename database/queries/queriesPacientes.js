@@ -21,12 +21,12 @@ const insertPacientes = async (pacientes) => {
 const updatePaciente = async (idPaciente, paciente) => {
     return await mPaciente.updateOne({ id: idPaciente },
         {
-            "dni": paciente.dni,
-            "nombre": paciente.nombre,
-            "apellido1": paciente.apellido1,
-            "apellido2": paciente.apellido2,
-            "edad": paciente.edad,
-            "nSeguro": paciente.nSeguro
+            dni: paciente.dni,
+            nombre: paciente.nombre,
+            apellido1: paciente.apellido1,
+            apellido2: paciente.apellido2,
+            edad: paciente.edad,
+            nSeguro: paciente.nSeguro
         }
     );
 }

@@ -3,17 +3,17 @@ const crypto = require('crypto');
 
 
 const getMedico = async (idMedico) => {
-    return mMedico.findOne({ id: idMedico });
+    return await mMedico.findOne({ id: idMedico });
 }
 
 
 const getMedicoEspecialidad = async (especialidad) => {
-    return mMedico.findOne({ especialidad: especialidad });
+    return await mMedico.findOne({ especialidad: especialidad });
 }
 
 
 const getListaMedicos = async () => {
-    return mMedico.find();
+    return await mMedico.find();
 }
 
 

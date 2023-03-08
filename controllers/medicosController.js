@@ -52,7 +52,7 @@ const generarMedico = () => {
     const letraDNI = letras[numDNI % 23];
     const nombres = ['Sauron', 'Gandalf', 'Aragorn', 'Frodo', 'Galadriel', 'Gimli', 'Legolas', 'Arwen', 'Elrond', 'Éowyn'];
     const apellidos = ['Baggins', 'Banks', 'Boffin', 'Bolger', 'Whitfoot', 'Maggot', 'Cotton', 'Rumble', 'Sackville' ];
-    const especialidades = ['medicina general', 'rodillología', 'ojología', 'golpenloslomoslogía', 'tontología', 'gargantología'];
+    const especialidades = ['Medicina general', 'Rodillología', 'Ojología', 'Golpenloslomoslogía', 'Tontología', 'Gargantología'];
 
     return {
         id: crypto.randomUUID(),

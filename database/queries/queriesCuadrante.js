@@ -13,7 +13,19 @@ const getCuadranteSemanal = async () => {
 }
 
 
+const updateCuadranteCitas = async (datosCita) => {
+    const cuadrante =  await mCuadrante.find({
+        dia: datosCita.dia,
+        turno: datosCita.turno,
+        citas: { $elemMatch: { idMedico: datosCita.idMedico } } 
+    });
+
+    console.log(cuadrante)
+}
+
+
 module.exports = {
     insertarCuadrante,
-    getCuadranteSemanal
+    getCuadranteSemanal,
+    updateCuadranteCitas
 };
